@@ -1,0 +1,54 @@
+<main class="py-5 mt-[100px] lg:mt-[107px]">
+  
+    <section>
+        <div class="container">
+            <div class="max-w-[800px] mx-auto self-center w-full">
+                <div class="mb-10 text-center">
+                    <h2>Create Exercise for {{course}}</h2>
+                </div>
+            
+                <div>
+                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                    
+                    <label for="course">Programming Language</label>
+                    <select name="course" id="course" formControlName="course">
+                        <option value="" disabled selected>Select language</option>
+                        <option value="python">Python</option>
+                        <option value="javascript">Javascript</option>
+                    </select>
+
+                    <label for="introduction">Theory for chapter</label> 
+                    <textarea class="block peer" rows="6" id="introduction" name="introduction"></textarea>
+
+                    <label for="subintroduction">Theory for exercise</label> 
+                    <textarea class="block peer" rows="6" id="subintroduction" name="subintroduction"></textarea>
+
+                    <label for="exercise_description">Exercise Description</label> 
+                    <textarea class="block peer" rows="6" id="exercise_description" name="exercise_description"></textarea>
+
+                    <label for="code">Code</label> 
+                    <textarea class="block peer" rows="6" id="code" name="code"></textarea>
+
+                    <label for="output">Output of code</label> 
+                    <textarea class="block peer" rows="6" id="output" name="output"></textarea>
+            
+                    <div formArrayName="hints">
+                    <h2>Hints</h2>
+                    <button type="button" (click)="addHint()">+ Add another hint</button>
+                    
+                    <!-- <div *ngFor="let hintForm of form.controls.hints; let i=index">
+
+                        <label for="hints-{{ i }}">Hints:</label>
+                        <input id="hints-{{ i }}" type="text" [formControlName]="i">
+                    </div> -->
+                    </div>
+
+                    <label for="id_text_input">Input label</label>
+                    <input class="block peer" type="text" id="id_text_input" name="id_text_input" />
+                
+                </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

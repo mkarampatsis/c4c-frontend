@@ -1,0 +1,144 @@
+<main class="py-5 mt-[100px] lg:mt-[107px]">
+  
+    <section>
+      <div class="container">
+        <div class="max-w-[800px] mx-auto self-center w-full">
+          <div class="mb-10 text-center">
+            <h2>Choose you Learning Path</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section class="my-32">
+      <div class="container">
+        <div class="grid grid-cols-1 gap-5 lg:grid-cols-2 mb-10">
+          
+            <div class="flex flex-col gap-16 px-3 py-5 text-center transition border border-white border-solid rounded-xl hover:border-custom-green group">
+                <div>
+                    <p class="mb-1">&nbsp;</p>
+                    <h5 class="transition group-hover:text-custom-green">Learning Python</h5>
+                </div>
+                <div class="flex-1 px-10">
+                    <p>
+                        Start learning Python. 
+                        <br>{{10 - pyCountTrainingExercises}} exercises left for <span style="color: rgb(162, 202, 0)">FREE</span> training
+                    </p> 
+                    @if (pyCheckForTrialLearner){
+                        <a (click)="enroll('learner', 'python')" class="mb-10 button button-primary button-full-width mt-9">
+                            <span *ngIf="!authService.isCourseLearner('python')">Enroll to Python course</span>
+                            <span *ngIf="authService.isCourseLearner('python')">Already enrolled to Python course</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.40381 15.5987L7.06787 14.2862L12.3179 9.03619H0.903809V7.16119H12.3179L7.06787 1.91119L8.40381 0.598694L15.9038 8.09869L8.40381 15.5987Z" />
+                            </svg>
+                        </a>
+                    } @else {
+                        <a routerLink="c4c/plans" class="mb-10 button button-primary button-full-width mt-9">
+                            <span style="color: rgb(162, 202, 0)">CHOOSE YOUR PLANE</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.40381 15.5987L7.06787 14.2862L12.3179 9.03619H0.903809V7.16119H12.3179L7.06787 1.91119L8.40381 0.598694L15.9038 8.09869L8.40381 15.5987Z" />
+                            </svg>
+                        </a>
+                    } 
+                </div>
+            </div>            
+
+            <div class="flex flex-col gap-16 px-3 py-5 text-center transition border border-white border-solid rounded-xl hover:border-custom-green group">
+                <div>
+                    <p class="mb-1">&nbsp;</p>
+                    <h5 class="transition group-hover:text-custom-green">Learning JavaScript</h5>
+                </div>
+                <div class="flex-1 px-10">
+                    <p> 
+                        Start learning JavaScript.
+                        <br>{{10 - jsCountTrainingExercises}} exercises left for <span style="color: rgb(162, 202, 0)">FREE</span> training
+                    </p>
+                    @if (jsCheckForTrialLearner){
+                    <a (click)="enroll('learner', 'javascript')" class="mb-10 button button-primary button-full-width mt-9">
+                        <span *ngIf="!authService.isCourseLearner('javascript')">Enroll to JavaScript course</span>
+                        <span *ngIf="authService.isCourseLearner('javascript')">Already enrolled to JavaScript course</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.40381 15.5987L7.06787 14.2862L12.3179 9.03619H0.903809V7.16119H12.3179L7.06787 1.91119L8.40381 0.598694L15.9038 8.09869L8.40381 15.5987Z" />
+                        </svg>
+                    </a>
+                    } @else {
+                        <a routerLink="c4c/plans" class="mb-10 button button-primary button-full-width mt-9">
+                            <span style="color: rgb(162, 202, 0)">CHOOSE YOUR PLANE</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.40381 15.5987L7.06787 14.2862L12.3179 9.03619H0.903809V7.16119H12.3179L7.06787 1.91119L8.40381 0.598694L15.9038 8.09869L8.40381 15.5987Z" />
+                            </svg>
+                        </a>
+                    } 
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-5 lg:grid-cols-2">
+            <div class="flex flex-col gap-16 px-3 py-5 text-center transition border border-white border-solid rounded-xl hover:border-custom-green group">
+                <div>
+                    <p class="mb-1">&nbsp;</p>
+                    <h5 class="transition group-hover:text-custom-green">Authoring Tool</h5>
+                </div>
+                <div class="flex-1 px-10">
+                    <p>
+                        Create your Python exercises with Authoring Tool.<br> 
+                        AI module will categorize your exercise <br>
+                        {{10 - pyCountAuthoringExercises}} exercises left for <span style="color: rgb(162, 202, 0)">FREE</span> training
+                    </p> 
+                    @if(pyCheckForTrialInstructor){
+                        <a (click)="enroll('instructor', 'python')" class="mb-10 button button-primary button-full-width mt-9">
+                            <span *ngIf="!authService.isCourseInstructor('python')">Enroll to Python Authoring Tool</span>
+                            <span *ngIf="authService.isCourseInstructor('python')">Already enrolled to Python Authoring Tool</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.40381 15.5987L7.06787 14.2862L12.3179 9.03619H0.903809V7.16119H12.3179L7.06787 1.91119L8.40381 0.598694L15.9038 8.09869L8.40381 15.5987Z" />
+                            </svg>
+                        </a>
+                    } @else {
+                        <a routerLink="c4c/plans" class="mb-10 button button-primary button-full-width mt-9">
+                            <span style="color: rgb(162, 202, 0)">CHOOSE YOUR PLANE</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.40381 15.5987L7.06787 14.2862L12.3179 9.03619H0.903809V7.16119H12.3179L7.06787 1.91119L8.40381 0.598694L15.9038 8.09869L8.40381 15.5987Z" />
+                            </svg>
+                        </a>
+                    } 
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-16 px-3 py-5 text-center transition border border-white border-solid rounded-xl hover:border-custom-green group">
+                <div>
+                    <p class="mb-1">&nbsp;</p>
+                    <h5 class="transition group-hover:text-custom-green">Authoring Tool</h5>
+                </div>
+                <div class="flex-1 px-10">
+                    <p>
+                        Create your JavaScript exercises with Authoring Tool.<br> 
+                        AI module will categorize your exercise <br>
+                        {{10 - jsCountAuthoringExercises}} exercises left for <span style="color: rgb(162, 202, 0)">FREE</span> training
+                    </p> 
+                    @if(jsCheckForTrialInstructor){
+                        <a (click)="enroll('instructor', 'javascript')" class="mb-10 button button-primary button-full-width mt-9">
+                            <span *ngIf="!authService.isCourseInstructor('javascript')">Enroll to JavaScript Authoring Tool</span>
+                            <span *ngIf="authService.isCourseInstructor('javascript')">Already enrolled to JavaScript Authoring Tool</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.40381 15.5987L7.06787 14.2862L12.3179 9.03619H0.903809V7.16119H12.3179L7.06787 1.91119L8.40381 0.598694L15.9038 8.09869L8.40381 15.5987Z" />
+                            </svg>
+                        </a>
+                    } @else {
+                        <a routerLink="c4c/plans" class="mb-10 button button-primary button-full-width mt-9">
+                            <span style="color: rgb(162, 202, 0)">CHOOSE YOUR PLANE</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.40381 15.5987L7.06787 14.2862L12.3179 9.03619H0.903809V7.16119H12.3179L7.06787 1.91119L8.40381 0.598694L15.9038 8.09869L8.40381 15.5987Z" />
+                            </svg>
+                        </a>
+                    } 
+                </div>
+            </div>
+  
+        </div>
+      </div>
+    </section>
+  </main>      
+  
+  
+  
+

@@ -1,0 +1,89 @@
+<main class="bg-custom-gray-900 mat-typography">
+    <div class="d-flex justify-content-between m-3">
+        <span class="h5">Please rate the dificulty of each exercise</span>
+        <button
+            type="button"
+            class="btn-close button button-primary "
+            (click)="modalRef.dismiss()"
+        >X</button>
+    </div>
+    <div class="modal-body">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <span class="fw-semibold">
+                    Course: {{ exercise?.exercise.type }}</span>
+                <span class="small text-white">
+                    Author: {{ exercise?.exercise.author.name }}</span
+                >
+            </div>
+            <div class="card-body">
+                <app-card-row-right-left
+                    [keyValue]="{
+                        key: 'Exercise Description',
+                        value: exercise?.exercise.exercise_description
+                    }"
+                ></app-card-row-right-left>
+                <app-card-row-right-left
+                    [keyValue]="{
+                        key: 'Code',
+                        value: exercise?.exercise.code
+                    }"
+                ></app-card-row-right-left>
+                <app-card-row-right-left
+                    [keyValue]="{
+                        key: 'Output',
+                        value: exercise?.exercise.output[0].replace('type=oneline\n', '').trim()
+                    }"
+                ></app-card-row-right-left>
+                <app-card-row-right-left
+                    [keyValue]="{
+                        key: 'Chapter',
+                        value: exercise?.exercise.category.chapter
+                    }" 
+                ></app-card-row-right-left>
+            </div>
+
+            <div style="width: 50%;margin-left: auto;margin-right: auto;">
+                <!-- <label style="color: white;" for="rate">Rate exercise ({{ rate.value }})</label>
+                <input type="range" #rate (input)="rate.value" id="rate" min="0" max="5"> -->
+                <label>Did You Find This Exercise Helpfull</label>
+                <div class="radio-group">
+                    <form [formGroup]="form">
+                        <div class="radio-container">
+                            <input type="radio" id="rate_yes" value="yes" formControlName="rate">
+                            <label for="rate_yes">Yes</label>
+                        </div>
+                        <div class="radio-container">
+                            <input type="radio" id="rate_no" value="no" formControlName="rate">
+                            <label for="rate_no">No</label>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                    <button (click)="submitRate()" class="button button-primary">
+                    Submit
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.40381 15.5987L7.06787 14.2862L12.3179 9.03619H0.903809V7.16119H12.3179L7.06787 1.91119L8.40381 0.598694L15.9038 8.09869L8.40381 15.5987Z" />
+                    </svg>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-end m-3">
+        <button
+            ngbAutofocus
+            type="button"
+            class="button button-primary"
+            (click)="modalRef.close()"
+        >
+            Return
+        </button>
+    </div>
+</main>
+
+
+

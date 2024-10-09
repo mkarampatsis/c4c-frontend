@@ -1,0 +1,11 @@
+.modal-content{
+    color: white;
+    --tw-bg-opacity: 1;
+    background-color: rgb(40 45 50 / var(--tw-bg-opacity));
+}
+
+.card{
+    color: white;
+    --tw-bg-opacity: 1;
+    background-color: rgb(40 45 50 / var(--tw-bg-opacity));
+}

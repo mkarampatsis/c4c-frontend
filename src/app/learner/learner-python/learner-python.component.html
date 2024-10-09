@@ -1,0 +1,89 @@
+<main class="py-5 mt-[100px] lg:mt-[107px]">
+  
+    <section>
+      <div class="container">
+        <div class="max-w-[1000px] mx-auto self-center w-full">
+          <div class="mb-10 text-center">
+            <h2>Learning Python</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section class="my-32">
+        <div class="container">
+            <div class="flex h-full px-6">
+                <div class="grid grid-cols-1 gap-3 lg:grid-cols-3">
+                    <!-- Instructions -->
+                    <div class="flex flex-col h-full gap-4">
+                        <div class="flex-1 overflow-y-auto text-black bg-white rounded-lg p-9 max-h-[200px] min-h-[200px]">
+                            <h6>Exercise Description</h6>
+                            <div [innerHTML]="exercise.exercise_description"></div>
+                       </div>
+                        <lib-hint [exerice]="exercise"></lib-hint>
+                    
+                        <div class="px-10 py-3 bg-black rounded-lg">
+                            <a (click)="showExerciseDetails()" class="button button-dark">
+                                Theory & Examples
+                                <svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.525 12.2231C1.19167 12.4398 0.854333 12.4524 0.513 12.2611C0.171666 12.0698 0.000666667 11.7738 0 11.3731V1.02309C0 0.623088 0.171 0.327088 0.513 0.135088C0.855 -0.0569121 1.19233 -0.0442453 1.525 0.173088L9.675 5.34809C9.975 5.54809 10.125 5.83142 10.125 6.19809C10.125 6.56475 9.975 6.84809 9.675 7.04809L1.525 12.2231Z" fill="white"/>
+                                </svg>
+                            </a>
+                            <a href="" class="button button-dark">
+                                Video
+                                <svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.525 12.2231C1.19167 12.4398 0.854333 12.4524 0.513 12.2611C0.171666 12.0698 0.000666667 11.7738 0 11.3731V1.02309C0 0.623088 0.171 0.327088 0.513 0.135088C0.855 -0.0569121 1.19233 -0.0442453 1.525 0.173088L9.675 5.34809C9.975 5.54809 10.125 5.83142 10.125 6.19809C10.125 6.56475 9.975 6.84809 9.675 7.04809L1.525 12.2231Z" fill="white"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Code Editor -->
+                    <div class="flex flex-col h-full">
+                        <form class=" max-h-full min-h-full" [formGroup]="form">
+                            <app-python-editor formControlName="code" [codeType]="'python'" ></app-python-editor>
+                        </form>
+                    </div>
+                    
+                    <div class="flex flex-col h-full gap-2">
+                        <div #preview class="text-white p-4 border rounded-lg max-h-half min-h-half overflow-auto" [innerHtml]="output">                        
+                        </div>
+                        <div class="text-white border rounded-lg max-h-half min-h-half overflow-auto">
+                            <iframe  src="https://pyodide.org/en/stable/console.html" frameborder="0" style="width:100%;height:100%;"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+               
+            </div>
+            <div class="px-6 py-5">
+                <div class="grid items-center h-full gap-7">
+                    <!-- Preview Code Window Footer -->
+                    <div class="flex flex-wrap items-center justify-start gap-5 lg:justify-end">
+                        <a class="button button-outline" (click)="runCode()">
+                            Run code
+                            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.40381 15.5987L7.06787 14.2862L12.3179 9.03619H0.903809V7.16119H12.3179L7.06787 1.91119L8.40381 0.598694L15.9038 8.09869L8.40381 15.5987Z" />
+                            </svg>
+                        </a>
+                        <a (click)="nextExercise()" class="button button-outline">
+                            Next Exercise
+                            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.40381 15.5987L7.06787 14.2862L12.3179 9.03619H0.903809V7.16119H12.3179L7.06787 1.91119L8.40381 0.598694L15.9038 8.09869L8.40381 15.5987Z" />
+                            </svg>
+                        </a>
+                        <!-- <a href="" class="button button-outline">
+                        Rate
+                        <svg width="3" height="15" viewBox="0 0 3 15" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 3H3V0H0V3ZM0 15H3V6H0V15Z" />
+                        </svg>
+                        </a> -->
+                        <a class="button button-outline button-outline__white" (click)="submit()">
+                        Submit
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>  

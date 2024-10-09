@@ -1,0 +1,27 @@
+<a
+  [routerLink]="link"
+  class="relative flex flex-col h-full items-center justify-center px-8 lg:px-20 py-12 min-h-[270px] overflow-hidden transition border-[2px] border-transparent border-solid rounded-xl  {{
+    borderColor === 'green'
+      ? 'hover:border-custom-green'
+      : 'hover:border-custom-blue'
+  }}"
+>
+  <div class="absolute inset-0 -z-[10]">
+    <div class="relative h-full overflow-hidden">
+      <video
+        #video
+        (canplay)="video.play()"
+        (loadedmetadata)="video.muted = true"
+        class="absolute object-cover w-full h-full -z-[10] rounded-xl"
+        muted
+        playsinline
+        autoplay
+        loop
+      >
+        <source [src]="videoURL" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+  <h4>{{ heading }}</h4>
+  <p class="mb-0">{{ paragraph }}</p>
+</a>

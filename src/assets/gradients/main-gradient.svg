@@ -1,0 +1,29 @@
+<svg width="1518" height="948" viewBox="0 0 1518 948" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.7">
+<mask id="mask0_587_874" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-322" y="-210" width="2136" height="1180">
+<rect x="-321.734" y="-209.185" width="2135.03" height="1178.37" fill="url(#paint0_diamond_587_874)"/>
+</mask>
+<g mask="url(#mask0_587_874)">
+<g filter="url(#filter0_f_587_874)">
+<path d="M165.984 -590.221L1570.75 -121.98L906.42 1871.08L-498.348 1402.84L165.984 -590.221Z" fill="url(#paint1_radial_587_874)"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_587_874" x="-698.348" y="-790.221" width="2469.1" height="2861.3" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_587_874"/>
+</filter>
+<radialGradient id="paint0_diamond_587_874" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(505.624 1074.47) rotate(-130.087) scale(907.72 2126.05)">
+<stop stop-color="#D9D9D9"/>
+<stop offset="0.3125" stop-color="#D9D9D9"/>
+<stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint1_radial_587_874" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(883.097 1135.96) rotate(-125.34) scale(1429.95 1566.53)">
+<stop stop-color="#AFDB00"/>
+<stop offset="0.376982" stop-color="#15A277"/>
+<stop offset="0.9999" stop-color="#424B54"/>
+</radialGradient>
+</defs>
+</svg>

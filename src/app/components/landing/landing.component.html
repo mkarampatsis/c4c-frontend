@@ -1,0 +1,41 @@
+<main
+  class="relative overflow-hidden py-36 md:min-h-screen md:flex md:flex-col md:items-center md:justify-center"
+>
+  <div
+    class="absolute inset-0 -z-[100] w-full h-full bg-no-repeat bg-cover bg-center"
+    style="background-image: url(/assets/gradients/main-gradient.svg)"
+  ></div>
+
+  <section>
+    <div class="container">
+      <div class="text-center">
+        <h1 class="max-w-[700px] mx-auto">Superhuman Tutor</h1>
+        <p class="max-w-[570px] mx-auto">
+          An Intelligent Tutoring System for Instructors and Learners
+        </p>
+      </div>
+
+        <div class="grid grid-cols-1 text-center mt-14 md:grid-cols-2 gap-7">
+            <ui-tile-video
+                [link]="'/c4c/authoring'"
+                [videoURL]="'/assets/videos/authoring-tool.mp4'"
+                [heading]="'Authoring tool'"
+                [paragraph]="'Content creation for instructors and institutions'"
+            ></ui-tile-video>
+            <ui-tile-video
+                [link]="'/c4c/learning'"
+                [videoURL]="'/assets/videos/learn.mp4'"
+                [heading]="'Learn Javascript + Python'"
+                [paragraph]="
+                    'Adaptive Learning Path for Beginners and Advanced Learners'
+                "
+                [borderColor]="'blue'"
+            ></ui-tile-video>
+        </div>
+
+      <!-- <div class="mt-8 text-center">
+        <app-button-video [text]="'Lean More'"></app-button-video>
+      </div> -->
+    </div>
+  </section>
+</main>

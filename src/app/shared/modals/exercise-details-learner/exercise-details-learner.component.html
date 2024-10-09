@@ -1,0 +1,59 @@
+<main class="bg-custom-gray-900 mat-typography">
+    <div class="d-flex justify-content-between m-3">
+        <span class="h5">Exercise</span>
+        <button
+            type="button"
+            class="btn-close button button-primary "
+            (click)="modalRef.dismiss()"
+        >X</button>
+    </div>
+    <div class="modal-body">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <span class="fw-semibold">
+                    Course: {{ exercise?.type }}</span>
+                <span class="small text-white">
+                    Author: {{ exercise?.author.name }}</span
+                >
+            </div>
+            <div class="card-body">
+                <app-card-row-right-left
+                    [keyValue]="{
+                        key: 'Exercise Description',
+                        value: exercise?.exercise_description
+                    }"
+                ></app-card-row-right-left>
+                <app-card-row-right-left
+                    [keyValue]="{
+                        key: 'Chapter',
+                        value: exercise?.category.chapter
+                    }"
+                ></app-card-row-right-left>
+                <app-card-row-right-left
+                    [keyValue]="{
+                        key: 'Introduction for exercise',
+                        value: exercise?.introduction
+                    }"
+                ></app-card-row-right-left>
+                <app-card-row-right-left
+                    [keyValue]="{
+                        key: 'Theory and Examples',
+                        value: exercise?.subintroduction
+                    }"
+                ></app-card-row-right-left>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-end m-3">
+        <button
+            ngbAutofocus
+            type="button"
+            class="button button-primary"
+            (click)="modalRef.close()"
+        >
+            Return
+        </button>
+    </div>
+</main>
+

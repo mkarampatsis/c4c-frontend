@@ -1,0 +1,244 @@
+<nav class="py-10 bg-custom-gray-800">
+  <div
+    class="flex flex-wrap justify-between mx-auto max-w-[1820px] px-5 gap-5 items-center"
+  >
+    <a routerLink="/c4c">
+      <img src="/assets/logos/code4code.svg" alt="" />
+    </a>
+
+    <!-- Desktop Menu -->
+    <ul
+      class="flex-wrap items-center hidden gap-10 mb-0 list-none lg:inline-flex"
+    >
+      <li class="mb-0">
+        <a routerLink="c4c" class="transition hover:text-custom-green"
+          >Home</a
+        >
+      </li>
+      <li class="relative mb-0 group">
+        <a routerLink="c4c/about" class="transition hover:text-custom-green"
+          >About</a
+        >
+      </li>
+      <li *ngIf="authService.isLearner()" class="mb-0">
+        <a routerLink="c4c/learner/dashboard" class="transition hover:text-custom-green"
+          >Learner</a
+        >
+      </li>
+      <li *ngIf="authService.isInstructor()" class="mb-0">
+        <a routerLink="c4c/instructor/dashboard" class="transition hover:text-custom-green"
+          >Instructor</a
+        >
+      </li>
+      <li *ngIf="authService.isAdministrator()" class="mb-0">
+        <a routerLink="c4c/administrator/dashboard" class="transition hover:text-custom-green"
+          >Administrator</a
+        >
+      </li>
+      <li class="mb-0">
+        <a routerLink="c4c/enroll" class="transition hover:text-custom-green"
+          >Enroll</a
+        >
+      </li>
+      <li class="mb-0">
+        <a routerLink="c4c/contact" class="transition hover:text-custom-green"
+          >Contact</a
+        >
+      </li>
+      <li class="relative mb-0 group">
+        <a href="javascript:void(0)">
+          <img
+            style="width: 30px; height: 30px"
+            class="rounded-full object-cover"
+            src="{{ user().photoUrl }}"
+            alt="User Photo"
+            (error)="onImageError($event)"
+          />
+        </a>
+        <ul
+          class="absolute flex-col hidden gap-3 px-8 py-5 mb-0 list-none rounded-lg -right-2 group-hover:inline-flex bg-custom-gray-800 top-6 w-max drop-shadow-custom-shadow"
+        >
+          <li class="mb-0">
+            <a
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Profile</a
+            >
+          </li>
+          <li class="mb-0">
+            <a
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Account</a
+            >
+          </li>
+          <li class="mb-0">
+            <a
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Help</a
+            >
+          </li>
+          <li class="mb-0">
+            <a
+              (click)="logout()"
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Log out</a
+            >
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- Burger Icon -->
+    <div
+      class="block cursor-pointer lg:hidden"
+      id="mobile-burger-icon"
+      (click)="onBurgerClick()"
+    >
+      <svg
+        width="69"
+        height="12"
+        viewBox="0 0 69 12"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M67.7315 10L2.00002 10"
+          stroke="#AFDB00"
+          stroke-width="2.5"
+          stroke-linecap="round"
+        />
+        <path
+          d="M67.7315 2L2.00002 2"
+          stroke="#AFDB00"
+          stroke-width="2.5"
+          stroke-linecap="round"
+        />
+      </svg>
+    </div>
+
+    <!-- Mobile Devices Menu -->
+    <ul
+      #mobileMenu
+      class="z-[999] hidden text-center fixed top-0 right-0 flex flex-col flex-wrap items-center justify-center w-screen h-screen gap-7 mb-0 list-none transition-all bg-custom-gray-800"
+      id="mobile-menu"
+    >
+      <!-- Burger Close Icon -->
+      <div
+        (click)="onBurgerIconCloseClick()"
+        class="absolute cursor-pointer top-7 right-5"
+        id="mobile-burger-close-icon"
+      >
+        <svg
+          width="64"
+          height="40"
+          viewBox="0 0 64 40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M62.266 32.6565L2.00003 6.41449"
+            stroke="#AFDB00"
+            stroke-width="2.5"
+            stroke-linecap="round"
+          />
+          <path
+            d="M2.26599 32.6565L62.5319 6.41449"
+            stroke="#AFDB00"
+            stroke-width="2.5"
+            stroke-linecap="round"
+          />
+        </svg>
+      </div>
+
+      <li class="mb-0 text-[25px]">
+        <a href="javascript:void(0)" class="transition hover:text-custom-green"
+          >Home</a
+        >
+      </li>
+      <li class="relative mb-0 group parent-menu" aria-expanded="false">
+        <a class="cursor-pointer transition hover:text-custom-green text-[25px]"
+          >Products</a
+        >
+        <ul
+          class="flex flex-col gap-2 py-0 mb-0 overflow-hidden list-none transition-all opacity-0 sub-menu max-h-0"
+        >
+          <li class="mb-0">
+            <a
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Number 1</a
+            >
+          </li>
+          <li class="mb-0">
+            <a
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Number 2</a
+            >
+          </li>
+          <li class="mb-0">
+            <a
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Number 3</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="mb-0">
+        <a
+          href="javascript:void(0)"
+          class="transition hover:text-custom-green text-[25px]"
+          >Tools</a
+        >
+      </li>
+      <li class="relative mb-0 group parent-menu" aria-expanded="true">
+        <a class="cursor-pointer flex justify-center">
+          <img
+            style="width: 30px; height: 30px"
+            class="rounded-full object-cover"
+            src="{{ user().photoUrl }}"
+            alt="User Photo"
+            (error)="onImageError($event)"
+          />
+        </a>
+        <ul
+          class="group-hover:inline-flex flex flex-col gap-2 py-0 mb-0 hidden list-none transition-all opacity-100 sub-menu max-h-min"
+        >
+          <li class="mb-0">
+            <a
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Profile</a
+            >
+          </li>
+          <li class="mb-0">
+            <a
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Account</a
+            >
+          </li>
+          <li class="mb-0">
+            <a
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Help</a
+            >
+          </li>
+          <li class="mb-0">
+            <a
+              (click)="logout()"
+              href="javascript:void(0)"
+              class="transition hover:text-custom-green"
+              >Log out</a
+            >
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>

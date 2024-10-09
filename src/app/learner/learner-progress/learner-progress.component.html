@@ -1,0 +1,73 @@
+<main class="py-5 mt-[100px] lg:mt-[107px]">
+  
+    <section>
+        <div class="container">
+          <div class="max-w-[800px] mx-auto self-center w-full">
+            <div class="mb-10 text-center">
+              <h2>Learner's Progress</h2>
+            </div>
+          </div>
+        </div>
+    </section>
+  
+    <section class="my-32">
+        <div class="container">
+            <div class="max-w-[1000px] mx-auto self-center w-full">
+                <div class="mb-10 text-center">
+                    <ag-grid-angular
+                        [domLayout]="'autoHeight'"
+                        [rowData]="exercises"
+                        [defaultColDef]="defaultColDef"
+                        [columnDefs]="colDefs"
+                        [pagination]="true"
+                        [paginationPageSize]="50"
+                        [loadingOverlayComponent]="loadingOverlayComponent"
+                        [loadingOverlayComponentParams]="loadingOverlayComponentParams"
+                        (gridReady)="onGridReady($event)"
+                        class="ag-theme-balham"
+                    >
+                    </ag-grid-angular>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="my-32">
+        <div class="container">
+            <div class="max-w-[1000px] mx-auto self-center w-full">
+                <div class="mb-2">
+                    @if(pyCountTrainingExercises>0){
+                        <h3 style="color: rgb(162, 202, 0)">Python Report</h3>
+
+                        <h5>Exercises solved</h5>
+                        <ngb-progressbar class="mb-3" type="success" [showValue]="true" [striped]="true"  [value]="pyCountTrainingExercises" />
+                        <h5>Chapters covered</h5>
+                        <ngb-progressbar class="mb-3" type="info" [showValue]="true" [striped]="true"  [value]="pyChaptersCovered" />
+                        <!-- <h5>Exercises correct/wrong</h5>
+                        <ngb-progressbar-stacked>
+                            <ngb-progressbar type="danger" [showValue]="true" [striped]="true" [value]="20"></ngb-progressbar>
+                            <ngb-progressbar type="success" [showValue]="true" [striped]="true" [value]="80"></ngb-progressbar>
+                        </ngb-progressbar-stacked> -->
+                    }
+
+                    @if(jsCountTrainingExercises>0){
+                        <h3 class="mt-16" style="color: rgb(162, 202, 0)">JavaScript Report</h3>
+
+                        <h5>Exercises solved</h5>
+                        <ngb-progressbar class="mb-3" type="success" [showValue]="true" [striped]="true"  [value]="jsCountTrainingExercises" />
+                        <h5>Chapters covered</h5>
+                        <ngb-progressbar class="mb-3" type="info" [showValue]="true" [striped]="true"  [value]="jsChaptersCovered" />
+                        <!-- <h5>Exercises correct/wrong</h5>
+                        <ngb-progressbar-stacked>
+                            <ngb-progressbar type="danger" [showValue]="true" [striped]="true" [value]="20"></ngb-progressbar>
+                            <ngb-progressbar type="success" [showValue]="true" [striped]="true" [value]="80"></ngb-progressbar>
+                        </ngb-progressbar-stacked> -->
+                    }
+                </div>
+            </div>
+
+           
+        </div>
+    </section>        
+</main>

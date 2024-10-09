@@ -1,0 +1,44 @@
+<main class="bg-custom-gray-900 mat-typography">
+    <div class="d-flex justify-content-between m-3">
+        <span class="h5">Introduction for exercise</span>
+        <button
+            type="button"
+            class="btn-close button button-primary "
+            (click)="modalRef.dismiss()"
+        >X</button>
+    </div>
+    <div class="modal-body">
+        <div class="card">
+            
+            <div style="width: 50%;margin-left: auto;margin-right: auto;">
+                <label style="color: white;" for="description">Introduction</label>
+                <app-prose></app-prose>
+                
+                <div class="flex flex-wrap items-center justify-between gap-3 mt-5">
+                    <button (click)="submit()" class="button button-primary">
+                    Submit
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.40381 15.5987L7.06787 14.2862L12.3179 9.03619H0.903809V7.16119H12.3179L7.06787 1.91119L8.40381 0.598694L15.9038 8.09869L8.40381 15.5987Z" />
+                    </svg>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-end m-3">
+        <button
+            ngbAutofocus
+            type="button"
+            class="button button-primary"
+            (click)="modalRef.close()"
+        >
+            Return
+        </button>
+    </div>
+</main>
+
+
+
+

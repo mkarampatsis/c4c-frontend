@@ -1,0 +1,70 @@
+<main class="bg-custom-gray-900 mat-typography">
+    <div class="d-flex justify-content-between m-3">
+        <span class="h5">Load exercise</span>
+        <button
+            type="button"
+            class="btn-close button button-primary "
+            (click)="modalRef.dismiss()"
+        >X</button>
+    </div>
+    <div class="modal-body">
+        <div class="card">
+            
+            <div style="width: 50%;margin-left: auto;margin-right: auto;">
+                <div class="card-header d-flex justify-content-between">
+                    <span class="fw-semibold">
+                        Please select an exercise to update
+                    </span>
+                </div>
+
+                <div class="card-body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="50%">Description</th>
+                                <th>Level of difficulty</th>
+                                <th>Actions</th>
+                            </tr>                 
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let exercise of exercises" class="border-b border-white">
+                            <td class="px-4 pt-4 pb-6">
+                                <div class="mb-2">
+                                    <div class="mb-2"><strong>Exercise ID: {{exercise.exercise}}</strong></div>
+                                    <div class="exercise_description" [innerHTML]="exercise.exercise_description"></div>
+                                </div>
+                                <div>Course: {{exercise.type}}</div>
+                            </td>
+                            <td class="px-4 pt-4 pb-6 whitespace-nowrap">
+                              {{exercise.difficulty}}
+                            </td>
+                            <td class="px-4 pt-4 pb-6 whitespace-nowrap">
+                                <a (click)="loadExercise(exercise)" class="button button-primary">
+                                    Load
+                                <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.40381 15.5987L7.06787 14.2862L12.3179 9.03619H0.903809V7.16119H12.3179L7.06787 1.91119L8.40381 0.598694L15.9038 8.09869L8.40381 15.5987Z" />
+                                </svg>
+                              </a>
+                            </td>
+                          </tr>
+                         </tbody>
+                      </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-end m-3">
+        <button
+            ngbAutofocus
+            type="button"
+            class="button button-primary"
+            (click)="modalRef.close()"
+        >
+            Return
+        </button>
+    </div>
+</main>
+
+

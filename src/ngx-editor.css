@@ -1,0 +1,206 @@
+.NgxEditor {
+    background: #f40606;
+    color: #000;
+    background-clip: padding-box;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+.NgxEditor--Disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+.NgxEditor__Placeholder:before {
+    color: #6c757d;
+    opacity: 1;
+    -webkit-user-select: none;
+    user-select: none;
+    position: absolute;
+    cursor: text;
+    content: attr(data-placeholder);
+}
+.NgxEditor__Placeholder[data-align="right"]:before {
+    position: relative;
+}
+.NgxEditor__Content {
+    padding: 8px;
+    white-space: pre-wrap;
+    outline: none;
+    font-variant-ligatures: none;
+    font-feature-settings: "liga" 0;
+}
+.NgxEditor__Content p {
+    margin: 0 0 10px;
+}
+.NgxEditor__Content blockquote {
+    padding-left: 16px;
+    border-left: 3px solid #ddd;
+    margin-left: 0;
+    margin-right: 0;
+}
+.NgxEditor__Content--Disabled {
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+.NgxEditor__Wrapper {
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+}
+.NgxEditor__Wrapper .NgxEditor__MenuBar {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.NgxEditor__Wrapper .NgxEditor {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border: none;
+}
+.NgxEditor__MenuBar {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3px;
+    cursor: default;
+    background-color: #fff;
+}
+.NgxEditor__MenuItem {
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+}
+.NgxEditor__MenuItem:hover {
+    background-color: #f1f1f1;
+}
+.NgxEditor__MenuItem.NgxEditor__MenuItem--Icon {
+    height: 30px;
+    width: 30px;
+    transition: 0.3s ease-in-out;
+}
+.NgxEditor__MenuItem.NgxEditor__MenuItem--Icon + .NgxEditor__MenuItem--Icon {
+    margin-left: 2px;
+}
+.NgxEditor__MenuItem .NgxEditor__MenuItem--IconContainer {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.NgxEditor__MenuItem.NgxEditor__MenuItem--Text {
+    padding: 0 5px;
+}
+.NgxEditor__MenuItem.NgxEditor__MenuItem--Active,
+.NgxEditor__MenuItem .NgxEditor__MenuItem--Active {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+}
+.NgxEditor__Dropdown {
+    min-width: 64px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+.NgxEditor__Dropdown:hover {
+    background-color: #f1f1f1;
+}
+.NgxEditor__Dropdown .NgxEditor__Dropdown--Text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    height: 100%;
+    width: 100%;
+}
+.NgxEditor__Dropdown .NgxEditor__Dropdown--Text:after {
+    display: inline-block;
+    content: "";
+    margin-left: 24px;
+    vertical-align: 4px;
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-bottom: 0;
+    border-left: 4px solid transparent;
+}
+.NgxEditor__Dropdown .NgxEditor__Dropdown--DropdownMenu {
+    position: absolute;
+    left: 0;
+    box-shadow: #3c404326 0 2px 6px 2px;
+    border-radius: 4px;
+    background-color: #fff;
+    z-index: 10;
+    width: 100%;
+    top: 32px;
+}
+.NgxEditor__Dropdown .NgxEditor__Dropdown--Item {
+    padding: 8px;
+    white-space: nowrap;
+    color: inherit;
+}
+.NgxEditor__Dropdown .NgxEditor__Dropdown--Item:hover {
+    background-color: #ececec;
+}
+.NgxEditor__Dropdown .NgxEditor__Dropdown--Selected,
+.NgxEditor__Dropdown .NgxEditor__Dropdown--Open {
+    color: #1a73e8;
+    background-color: #e8f0fe;
+}
+.NgxEditor__Dropdown .NgxEditor__Dropdown--Active {
+    background-color: #f1f1f1;
+}
+.NgxEditor__Dropdown .NgxEditor__Dropdown--Active:hover {
+    background-color: #e7e7e7;
+}
+.NgxEditor__MenuBar--Reverse .NgxEditor__Dropdown--DropdownMenu {
+    top: unset;
+    bottom: 32px;
+}
+.NgxEditor__MenuBar--Reverse .NgxEditor__Dropdown--Text:after {
+    transform: rotate(180deg);
+}
+.NgxEditor__MenuBar--Reverse .NgxEditor__Popup {
+    top: unset;
+    bottom: 32px;
+}
+.NgxEditor__Popup {
+    position: absolute;
+    top: 32px;
+    box-shadow: #3c404326 0 2px 6px 2px;
+    border-radius: 4px;
+    background-color: #fff;
+    z-index: 10;
+    min-width: 192px;
+    padding: 8px;
+}
+.NgxEditor__Popup .NgxEditor__Popup--FormGroup {
+    margin-bottom: 8px;
+}
+.NgxEditor__Popup .NgxEditor__Popup--FormGroup label {
+    margin-bottom: 3px;
+}
+.NgxEditor__Popup .NgxEditor__Popup--FormGroup input[type="text"],
+.NgxEditor__Popup .NgxEditor__Popup--FormGroup input[type="url"] {
+    padding: 2px 4px;
+}
+.NgxEditor__Popup .NgxEditor__Popup--Col {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.NgxEditor__Popup .NgxEditor__Popup--Label {
+    font-size: 85%;
+}
+.NgxEditor__Seperator {
+    border-left: 1px solid #ccc;
+    margin: 0 5px;
+}
+.NgxEditor__HelpText {
+    font-size: 80%;
+}
+.NgxEditor__HelpText.NgxEditor__HelpText--Error {
+    color: red;
+}

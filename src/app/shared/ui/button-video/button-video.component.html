@@ -1,0 +1,31 @@
+<a #button class="button button-outline button-video group">
+  <div
+    class="absolute inset-0 -z-[10] invisible opacity-0 transition-all group-hover:visible group-hover:opacity-100"
+  >
+    <div class="relative h-full overflow-hidden">
+      <video
+        #video
+        class="absolute object-cover w-full h-full -z-[10]"
+        muted
+        playsinline
+        autoplay
+        loop
+        (canplay)="video.play()"
+        (loadedmetadata)="video.muted = true"
+      >
+        <source src="/assets/videos/button.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+  {{ text }}
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M8.40381 15.5987L7.06787 14.2862L12.3179 9.03619H0.903809V7.16119H12.3179L7.06787 1.91119L8.40381 0.598694L15.9038 8.09869L8.40381 15.5987Z"
+    />
+  </svg>
+</a>

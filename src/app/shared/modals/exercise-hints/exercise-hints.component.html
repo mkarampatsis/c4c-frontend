@@ -1,0 +1,61 @@
+<main class="bg-custom-gray-900 mat-typography">
+    <div class="d-flex justify-content-between m-3">
+        <span class="h5">Hints for exercise</span>
+        <button
+            type="button"
+            class="btn-close button button-primary "
+            (click)="modalRef.dismiss()"
+        >X</button>
+    </div>
+    <div class="modal-body">
+        <div class="card">
+            <div style="width: 80%; margin-left: auto; margin-right: auto;">
+                
+                <form [formGroup]="form">
+                    <div formArrayName="hints"
+                        *ngFor="let hint of form.get('hints')['controls']; let i=index; let l=last" >
+                        <div [formGroupName]="i" class="flex items-center justify-between gap-3 mt-5">
+                            <div>
+                                <label for="fldText">Add text for hint</label>
+                                <textarea id="fldText" cols="30" rows="10" formControlName="text"></textarea>
+                            </div>
+
+                            <div>
+                                <label for="fldCode">Add code for text</label>
+                                <textarea id="fldCode" cols="30" rows="10" formControlName="code"></textarea>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <button (click)="deleteRow(i)" class="button button-primary">
+                                    <mat-icon >delete_forever</mat-icon>
+                                </button>
+                                <button (click)="addRow()" class="button button-primary">
+                                    <mat-icon >add_circle</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="flex flex-wrap items-center justify-between gap-3 mt-5">
+                   <button (click)="submit()" class="button button-primary">
+                        Submit
+                        <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.40381 15.5987L7.06787 14.2862L12.3179 9.03619H0.903809V7.16119H12.3179L7.06787 1.91119L8.40381 0.598694L15.9038 8.09869L8.40381 15.5987Z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-end m-3">
+        <button
+            ngbAutofocus
+            type="button"
+            class="button button-primary"
+            (click)="modalRef.close()"
+        >
+            Return
+        </button>
+    </div>
+</main>

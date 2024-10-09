@@ -1,0 +1,17 @@
+<div class="accordion">
+    <div *ngFor="let hint of exerice.hints; index as i" class="mb-2 border border-white rounded-lg">
+        <div class="relative py-1 pr-20 transition-all rounded-t-lg rounded-b-lg cursor-pointer accordion-title pl-7 hover:bg-custom-green group" aria-expanded="false" (click)='toggleAccordion("hint_"+i)' id="hint_{{i}}">
+            <h6 class="mb-0 text-white transition group-hover:text-custom-gray-800">Hint {{i+1}} </h6>
+            <span class="transition-all absolute right-4 inline-block w-5 h-5 top-[50%] -translate-y-[50%] group-hover:before:bg-custom-gray-800 group-hover:after:bg-custom-gray-800
+            before:block before:absolute before:content-[''] before:top-2 before:right-0 before:w-6 before:h-[1px] before:bg-white
+            after:block after:absolute after:content-[''] after:-top-1 after:right-[11px] after:h-6 after:w-[1px] after:bg-white">
+            </span>
+        </div>
+        <div class="py-0 overflow-hidden transition-all opacity-0 px-7 max-h-0">
+            <div [innerHTML]="hint.text"></div>
+            <div [innerHTML]="hint.code"></div>
+            <!-- <span>Penalty:</span>
+            <div [innerHTML]="hint.penalty"></div> -->
+        </div>
+    </div>
+</div>

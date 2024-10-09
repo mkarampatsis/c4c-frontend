@@ -1,0 +1,87 @@
+<!-- Mobile Devices Menu -->
+<ul
+  class="z-[999] text-center fixed top-0 flex flex-col flex-wrap items-center justify-center w-screen h-screen gap-7 mb-0 list-none transition-all -right-[120%] lg:hidden bg-custom-gray-800"
+  id="mobile-menu"
+>
+  <!-- Burger Close Icon -->
+  <div
+    class="absolute cursor-pointer top-7 right-5"
+    id="mobile-burger-close-icon"
+  >
+    <svg
+      width="64"
+      height="40"
+      viewBox="0 0 64 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M62.266 32.6565L2.00003 6.41449"
+        stroke="#AFDB00"
+        stroke-width="2.5"
+        stroke-linecap="round"
+      />
+      <path
+        d="M2.26599 32.6565L62.5319 6.41449"
+        stroke="#AFDB00"
+        stroke-width="2.5"
+        stroke-linecap="round"
+      />
+    </svg>
+  </div>
+
+  <li class="mb-0 text-[25px]">
+    <a href="" class="transition hover:text-custom-green">Home</a>
+  </li>
+  <li class="relative mb-0 group parent-menu" aria-expanded="false">
+    <a class="cursor-pointer transition hover:text-custom-green text-[25px]"
+      >Products</a
+    >
+    <ul
+      class="flex flex-col gap-2 py-0 mb-0 overflow-hidden list-none transition-all opacity-0 sub-menu max-h-0"
+    >
+      <li class="mb-0">
+        <a href="" class="transition hover:text-custom-green">Number 1</a>
+      </li>
+      <li class="mb-0">
+        <a href="" class="transition hover:text-custom-green">Number 2</a>
+      </li>
+      <li class="mb-0">
+        <a href="" class="transition hover:text-custom-green">Number 3</a>
+      </li>
+    </ul>
+  </li>
+  <li class="mb-0">
+    <a href="" class="transition hover:text-custom-green text-[25px]">Tools</a>
+  </li>
+  <li class="mb-0">
+    <a href="" class="button button-outline button-video group">
+      <div
+        class="absolute inset-0 -z-[10] invisible opacity-0 transition-all group-hover:visible group-hover:opacity-100"
+      >
+        <div class="relative h-full overflow-hidden">
+          <video
+            class="absolute object-cover w-full h-full -z-[10]"
+            muted
+            playsinline
+            autoplay
+            loop
+          >
+            <source src="/assets/videos/button.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+      Try the demo
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8.40381 15.5987L7.06787 14.2862L12.3179 9.03619H0.903809V7.16119H12.3179L7.06787 1.91119L8.40381 0.598694L15.9038 8.09869L8.40381 15.5987Z"
+        />
+      </svg>
+    </a>
+  </li>
+</ul>
